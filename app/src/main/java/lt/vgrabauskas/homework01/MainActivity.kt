@@ -21,10 +21,19 @@ class MainActivity : AppCompatActivity() {
             Log.i(TAG, "onCreate: $nameLength")
             var numberOfLetters: TextView = findViewById(R.id.numberOfLettersTextView)
             numberOfLetters.setText("The name contains $nameLength symbols")
+
             val fuelPrice : TextView = findViewById(R.id.fuelPriceEditText)
             val fuelFloat: Float = fuelPrice.text.toString().toFloat()
             val fuelPriceChange: TextView = findViewById(R.id.fuelPriceTextView)
             fuelPriceChange.setText("Fuel price is $fuelFloat Eur")
+
+            val sumtext: TextView = findViewById(R.id.sumTextView)
+            val sum: Float = nameLength + fuelFloat
+            sumtext.setText("Sum of symbols and fuel price is $sum")
+
+            val isSumPositive = sum > 0
+            val sumPositive: TextView = findViewById(R.id.isSumPositiveTextView)
+            sumPositive.setText("Is sum positive? $isSumPositive")
         }
 
 
