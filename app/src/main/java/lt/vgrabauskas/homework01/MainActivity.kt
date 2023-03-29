@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
             val isSumPositive = sum > 0
             val sumPositive: TextView = findViewById(R.id.isSumPositiveTextView)
             sumPositive.setText("Is sum positive? $isSumPositive")
+
+            val firstLetter = nameEditText.text[0]
+            val firstLetterView: TextView = findViewById(R.id.firstLetterTextView)
+            firstLetterView.setText("First letter of the name is '$firstLetter' ")
         }
 
 
