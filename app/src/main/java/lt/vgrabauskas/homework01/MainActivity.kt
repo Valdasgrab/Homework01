@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             val subtraction: Float = nameLength - fuelFloat
             val subtractionView: TextView = findViewById(R.id.subtractTextView)
             subtractionView.text = "Result of subtraction $subtraction"
+
+            val isSumStillPositive = subtraction > 0
+            val sumStillPositiveView: TextView = findViewById(R.id.isStillPositiveTextView)
+            sumStillPositiveView.text = "Is sum still positive? $isSumStillPositive"
         }
 
 
