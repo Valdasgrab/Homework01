@@ -1,5 +1,6 @@
 package lt.vgrabauskas.homework01
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     val TAG = "check_this"
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,24 +22,28 @@ class MainActivity : AppCompatActivity() {
             var nameLength: Int = nameEditText.text.length
             Log.i(TAG, "onCreate: $nameLength")
             var numberOfLetters: TextView = findViewById(R.id.numberOfLettersTextView)
-            numberOfLetters.setText("The name contains $nameLength symbols")
+            numberOfLetters.text = "The name contains $nameLength symbols"
 
             val fuelPrice : TextView = findViewById(R.id.fuelPriceEditText)
             val fuelFloat: Float = fuelPrice.text.toString().toFloat()
             val fuelPriceChange: TextView = findViewById(R.id.fuelPriceTextView)
-            fuelPriceChange.setText("Fuel price is $fuelFloat Eur")
+            fuelPriceChange.text = "Fuel price is $fuelFloat Eur"
 
             val sumtext: TextView = findViewById(R.id.sumTextView)
             val sum: Float = nameLength + fuelFloat
-            sumtext.setText("Sum of symbols and fuel price is $sum")
+            sumtext.text = "Sum of symbols and fuel price is $sum"
 
             val isSumPositive = sum > 0
             val sumPositive: TextView = findViewById(R.id.isSumPositiveTextView)
-            sumPositive.setText("Is sum positive? $isSumPositive")
+            sumPositive.text = "Is sum positive? $isSumPositive"
 
             val firstLetter = nameEditText.text[0]
             val firstLetterView: TextView = findViewById(R.id.firstLetterTextView)
-            firstLetterView.setText("First letter of the name is '$firstLetter' ")
+            firstLetterView.text = "First letter of the name is '$firstLetter' "
+
+            val subtraction: Float = nameLength - fuelFloat
+            val subtractionView: TextView = findViewById(R.id.subtractTextView)
+            subtractionView.text = "Result of subtraction $subtraction"
         }
 
 
