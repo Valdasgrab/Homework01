@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
             Log.i(TAG, "onCreate: $nameLength")
             var numberOfLetters: TextView = findViewById(R.id.numberOfLettersTextView)
             numberOfLetters.setText("The name contains $nameLength symbols")
+            val fuelPrice : TextView = findViewById(R.id.fuelPriceEditText)
+            val fuelFloat: Float = fuelPrice.text.toString().toFloat()
+            val fuelPriceChange: TextView = findViewById(R.id.fuelPriceTextView)
+            fuelPriceChange.setText("Fuel price is $fuelFloat Eur")
         }
 
 
